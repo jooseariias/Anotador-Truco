@@ -67,7 +67,7 @@ export default function ListPlayers() {
                   </div>
                   <div>
                     <button
-                      className="bg-green-500 btn hover:bg-green-700 w-10 rounded-md h-10"
+                      className="bg-green-500 text-[20px] btn hover:bg-green-700 w-10 font-bold rounded-md h-10"
                       onClick={() => updatePoints(playerId, 1)}
                     >
                       +
@@ -75,7 +75,7 @@ export default function ListPlayers() {
                   </div>
                   <div>
                     <button
-                      className="bg-blue-300 btn hover:bg-blue-500 w-10 rounded-md h-10"
+                      className="bg-blue-300 btn text-[30px] hover:bg-blue-500 font-bold w-10 rounded-md h-10"
                       onClick={() => updatePoints(playerId, -1)}
                     >
                       -
@@ -86,7 +86,7 @@ export default function ListPlayers() {
                     className="bg-red-500 btn hover-bg-red-700 w-10 rounded-[5px]"
                     onClick={() => deletePlayer(playerId)}
                   >
-                    Eliminar
+                   x
                   </button>
                 </div>
                   
