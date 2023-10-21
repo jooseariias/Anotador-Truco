@@ -5,7 +5,7 @@ import ListPlayers from "./Components/ListPlayers/ListPlayers";
 
 function App() {
   return (
-    <div>
+    <div className="bg-white">
       <h1 className="text-[50px] text-center font-mono ">Truco</h1>
       <h2 className="text-[30px] text-center font-mono ">Anotador Puntos</h2>
       <AddPlayer/>
