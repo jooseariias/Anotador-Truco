@@ -1,23 +1,24 @@
 import  { useState  } from "react";
 
 export default function AddPlayer() {
-  const [player, setPlayer] = useState({ Nombre: "", Puntos: 0 }); // Estado para el valor del jugador
+  const [player, setPlayer] = useState({ Nombre: "", Puntos: 0 });
 
   const handleAddPlayer = () => {
     if (player.Nombre) {
-      const players = JSON.parse(localStorage.getItem('players')) || {};
-
       const playerId = new Date().getTime();
-
-      const newPlayer = { Nombre: player.Nombre, Puntos: player.Puntos };
-
+      const newPlayer = { id: playerId, Nombre: player.Nombre, Puntos: player.Puntos };
+      
+      const players = JSON.parse(localStorage.getItem("players")) || {};
       players[playerId] = newPlayer;
 
-      localStorage.setItem('players', JSON.stringify(players));
-
+      localStorage.setItem("players", JSON.stringify(players));
       setPlayer({ Nombre: "", Puntos: 0 });
+      
+      // Simplemente agregamos un evento personalizado que se dispara cada vez que se agrega un jugador
+      const event = new Event('playerAdded');
+      window.dispatchEvent(event);
     }
-  };
+  }
   return (
     <div>
       <section>
