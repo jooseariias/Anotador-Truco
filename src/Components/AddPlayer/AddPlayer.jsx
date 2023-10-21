@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  { useState  } from "react";
 
 export default function AddPlayer() {
   const [player, setPlayer] = useState({ Nombre: "", Puntos: 0 }); // Estado para el valor del jugador
@@ -6,14 +6,18 @@ export default function AddPlayer() {
   const handleAddPlayer = () => {
     if (player.Nombre) {
       const players = JSON.parse(localStorage.getItem('players')) || {};
+
       const playerId = new Date().getTime();
+
       const newPlayer = { Nombre: player.Nombre, Puntos: player.Puntos };
+
       players[playerId] = newPlayer;
+
       localStorage.setItem('players', JSON.stringify(players));
+
       setPlayer({ Nombre: "", Puntos: 0 });
     }
   };
-
   return (
     <div>
       <section>
